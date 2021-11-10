@@ -1,0 +1,34 @@
+\documentclass{article}
+
+\nofiles
+
+\usepackage[a4paper,hmargin=1in,vmargin=1in]{geometry}
+\usepackage{amsfonts,amsmath,amsthm,enumitem}
+
+\newenvironment{exercise}[1]
+{\noindent \textbf{Exercise #1.}}
+{\par \addvspace{3mm}}
+
+\begin{document}
+
+\begin{exercise}{5.3.2} 
+    Let $f$ be differentiable on an interval $A$. If $f'(x) \neq 0$ on $A$, show that $f$ is one-to-one on $A$. Provide an example to show that the converse statement need not be true.
+
+    \begin{proof}Suppose $f$ is not one-to-one on interval $A$. Then there exist two points $x, y \in A$ with $f(x) = f(y)$. By the Mean Value Theorem, there exists some point $z \in (x,y)$ such that
+    \[f'(z) = \frac{f(x) - f(y)}{x - y} = 0.\]
+    \noindent Thus, if $f'(x) \neq 0$ for all $x \in A$, then $f$ is one-to-one.
+    \end{proof}
+    
+    \noindent As an example that shows the converse is not necessarily true, consider $f(x) = x^2$ on $[0, \infty)$. $f$ is one-to-one and $f'(0) = 0$.
+    \end{exercise}
+    
+    \begin{exercise}{5.3.3} Let $h$ be a differentiable function defined on the interval $[0, 3]$, and assume that $h(0) = 1$, $h(1) = 2$, and $h(3) = 2$.
+    
+    \begin{enumerate}[label=(\alph*)]
+        \item Argue that there exists a point $d \in [0, 3]$ where $h(d) = d$.
+        $\mathbf{TODO}$
+        
+    \end{enumerate}
+    \end{exercise}
+
+\end{document}

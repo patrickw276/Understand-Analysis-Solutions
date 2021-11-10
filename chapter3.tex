@@ -1,0 +1,33 @@
+\documentclass{article}
+
+\nofiles
+
+\usepackage[a4paper,hmargin=1in,vmargin=1in]{geometry}
+\usepackage{amsfonts,amsmath,amsthm,enumitem}
+
+\newenvironment{exercise}[1]
+{\noindent \textbf{Exercise #1.}}
+{\par \addvspace{3mm}}
+
+\begin{document}
+
+\begin{exercise}{3.4.6}
+    (Sequential Characterization of Connected Sets) A set $E \subseteq \mathbf{R}$ is connected if and only if, for all 
+    nonempty disjoint sets $A$ and $B$ satisfying $E = A \cup B$, there always exists a convergent sequence 
+    $(x_n) \to x$ with $(x_n)$ contained in one of A or B, and $x$ an element of the other.
+    
+    \begin{proof} 
+        Let $E \subseteq \mathbf{R}$ be a connected set. If $E = A \cup B$ where $A$ and $B$ are nonempty disjoint sets,
+        then either $\overline{A} \cap B$ or $A \cap \overline{B}$ is nonempty. Without loss of generality, suppose 
+        $\overline{A} \cap B$ is nonempty. Then there exists some $x \in \overline{A} \cap B$ where $x \notin A$. 
+        $x \in A$ and $x \notin \overline{A}$ implies $x$ is a limit point of A so there exists some $(x_n) \subseteq A$
+        with $(x_n) \to x$ and $x \in B$.
+
+        Now we'll prove the converse. Suppose that whenever $A \cup B = E$ for nonempty disjoint sets $A$ and $B$, there
+        exists some $(x_n) \to x$ with $(x_n)$ contained in either $A$ or $B$ and $x$ contained in the other. Without 
+        loss of generality, suppose $(x_n) \subseteq A$. Then $x \in \overline{A}$ so $x \in \overline{A} \cap B$. Thus 
+        $E$ is connected.
+    \end{proof}
+\end{exercise}
+
+\end{document}
