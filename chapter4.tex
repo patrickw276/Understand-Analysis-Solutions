@@ -1,0 +1,208 @@
+\documentclass{article}
+
+\nofiles
+
+\usepackage[a4paper,hmargin=1in,vmargin=1in]{geometry}
+\usepackage{amsfonts,amsmath,amsthm,enumitem}
+
+\newenvironment{exercise}[1]
+{\noindent \textbf{Exercise #1.}}
+{\par \addvspace{3mm}}
+
+\begin{document}
+
+\begin{exercise}{3.4.6} (Sequential Characterization of Connected Sets) A set $E \subseteq \mathbf{R}$ is connected if and only if, for all nonempty disjoint sets $A$ and $B$ satisfying $E = A \cup B$, there always exists a convergent sequence $(x_n) \to x$ with $(x_n)$ contained in one of A or B, and $x$ an element of the other.
+
+\begin{proof} Let $E \subseteq \mathbf{R}$ be a connected set. If $E = A \cup B$ where $A$ and $B$ are nonempty disjoint sets, then either $\overline{A} \cap B$ or $A \cap \overline{B}$ is nonempty. Without loss of generality, suppose $\overline{A} \cap B$ is nonempty. Then there exists some $x \in \overline{A} \cap B$ where $x \notin A$. $x \in A$ and $x \notin \overline{A}$ implies $x$ is a limit point of A so there exists some $(x_n) \subseteq A$ with $(x_n) \to x$ and $x \in B$.
+
+Now we'll prove the converse. Suppose that whenever $A \cup B = E$ for nonempty disjoint sets $A$ and $B$, there exists some $(x_n) \to x$ with $(x_n)$ contained in either $A$ or $B$ and $x$ contained in the other. Without loss of generality, suppose $(x_n) \subseteq A$. Then $x \in \overline{A}$ so $x \in \overline{A} \cap B$. Thus $E$ is connected.
+\end{proof}
+\end{exercise}
+
+\begin{exercise}{4.2.1} Let $f$ and $g$ be functions defined on some $A \subseteq \mathbf{R}$ with $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$ for some limit point $c$ of $A$. Then $\lim_{x \to c} [f(x) + g(x)] = L + M$.
+
+\begin{enumerate}[label=(\alph*)]
+    \item Proof using the Sequential Criterion for Functional Limits and the Algebraic Limit Theorem:
+    \begin{proof} By the Sequential Criterion for Functional Limits, we know that for any sequence $(x_n) \subseteq A$ with $\lim x_n = c$ and $x_n \neq c$ for all $n \in \mathbf{N}$, $\lim f(x_n) = L$ and $\lim g(x_n) = M$. Then the Algebraic Limit Theorem tells us that $\lim [f(x_n) + g(x_n)] = L + M$. Thus, the Sequential Criterion for Functional Limits implies $\lim_{x \to c}[f(x) + g(x)] = L + M$.
+    \end{proof}
+
+    \item Proof using the $\epsilon-\delta$ definition of functional limits:
+    \begin{proof} Let $\epsilon > 0$ be arbitrary. There exists a $\delta_0 > 0$ such that for any $x \in A$, if $0 < |x - c| < \delta_0$, then $|f(x) - L| < \epsilon/2$. Similarly, there exists a $\delta_1 > 0$ such that for any $x \in A$, if $0 < |x - c| < \delta_1$, then $|g(x) - M| < \epsilon/2$. If $\delta = \min\{\delta_0, \delta_1\}$ and $0 < |x - c| < \delta$, then $|(f(x) + g(x)) - (L + M)| \leq |f(x) - L| + |g(x) - M| < \epsilon$. Thus, $\lim_{x \to c}[f(x) + g(x)] = L + M$.
+    \end{proof}
+    
+    \item $\lim_{x \to c}[f(x)g(x)] = LM$.\vspace{\baselineskip}
+
+    Proof using the Sequential Criterion for Functional Limits and the Algebraic Limit Theorem:
+    \begin{proof} By the Sequential Criterion for Functional Limits, we know that for any sequence $(x_n) \subseteq A$ with $\lim x_n = c$ and $x_n \neq c$ for all $n \in \mathbf{N}$, $\lim f(x_n) = L$ and $\lim g(x_n) = M$. Then the Algebraic Limit Theorem tells us that $\lim [f(x_n)g(x_n)] = LM$. Thus, the Sequential Criterion for Functional Limits implies $\lim_{x \to c}[f(x)g(x)] = LM$.
+    \end{proof}
+    
+    Proof using the $\epsilon-\delta$ definition of functional limits:
+    \begin{proof} Let $\epsilon > 0$ be arbitrary. There exists a $\delta_0 > 0$ such that for any $x \in A$, if $0 < |x - c| < \delta_0$, then $|f(x) - L| < \min\{\frac{\epsilon}{2(|M| + 1)}, 1\}$. Similarly, there exists a $\delta_1 > 0$ such that for any $x \in A$, if $0 < |x - c| < \delta_1$, then $|g(x) - M| < \frac{\epsilon}{2(|L| + 1)}$. Then if $\delta = \min\{\delta_0, \delta_1\}$ and $0 < |x - c| < \delta$,
+    \begin{align*}
+        |f(x)g(x) - LM| &\leq |M||f(x) - L| + |f(x)||g(x) - M| \\
+                        &< |M||f(x) - L| + (|L| + 1)|g(x) - M| \\
+                        &< \epsilon.
+    \end{align*}
+    Thus, $\lim_{x \to c}[f(x)g(x)] = LM$.
+    \end{proof}
+    
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4.2.2} For each stated limit, find the largest possible \(\delta\)-neighborhood
+that is a proper response to the given \(\epsilon\) challenge.
+\begin{enumerate}[label=(\alph*)]
+    \item \(\lim_{x \to 3} (5x - 6) = 9\), where \(\epsilon = 1\).
+    \[\delta = \frac{1}{5}\]
+    
+    \item \(\lim_{x \to 4}\sqrt{x} = 2\), where \(\epsilon = 1\).
+    \[\delta = 3\]
+    
+    \item \(\lim_{x \to \pi}\lfloor x \rfloor = 3\), where \(\epsilon = 1\).
+    \[\delta = \pi - 3\]
+    
+    \item \(\lim_{x \to \pi}\lfloor x \rfloor = 3\), where \(\epsilon = 0.01\).
+    \[\delta = \pi - 3\]
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4.3.1} Let $g(x) = \sqrt[3]{x}$.
+\begin{enumerate}[label=(\alph*)]
+    \item Prove that $g$ is continuous at $c = 0$.
+    \begin{proof}If $|x| < \epsilon^3$, then $|\sqrt[3]{x}| < \epsilon$.\end{proof}
+    \item Prove that $g$ is continuous at a point $c \neq 0$.
+    \begin{proof}Let $|x - c| < \min{c^{2/3}\epsilon, |c|}$. Then
+    \begin{align*}
+        |g(x) - g(c)| = |x^{1/3} - c^{1/3}| = \frac{|x - c|}{|x^{2/3} + x^{1/3}c^{1/3} + c^{2/3}|} < \frac{|x - c|}{c^{2/3}} < \epsilon.
+    \end{align*}
+    \end{proof}
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4.3.2} Let \(f\) be a function defined on all of \(\mathbf{R}\).
+\begin{enumerate}[label=(\alph*)]
+    \item \(f\) is \textit{onetinuous} at \(c\) if \(\forall \epsilon > 0, |x - c| < 1 \implies |f(x) - f(c)| < \epsilon\).
+    \medskip \newline
+    \(f(x) = k \text{ for some } k \in \mathbf{R} \text{ is \textit{onetinuous}.}\)
+    
+    \item \(f\) is \textit{equaltinuous} at \(c\) if \(\forall \epsilon > 0, |x - c| < \epsilon \implies |f(x) - f(c)| < \epsilon\).
+    \medskip \newline
+    \(f(x) = mx + b \text{ where } m, b \in \mathbf{R} \text{ and } 0 < |m| \leq 1 \text{ is \textit{equaltinuous} and not \textit{onetinuous}.}\)
+    
+    \item \(f\) is \textit{lesstinuous} at \(c\) if \(\forall \epsilon > 0, \exists \delta > 0, \delta < \epsilon, |x - c| < \delta \implies |f(x) - f(c)| < \epsilon\).
+    \medskip \newline
+    \(f(x) = mx + b \text{ where } m, b \in \mathbf{R} \text{ and } |m| < 1 \text{ is \textit{lesstinuous} and not \textit{equaltinuous}}.\)
+    
+    \item Is every \textit{lesstinuous} function continuous? Is every continuous function \textit{lesstinuous}?
+    \medskip \newline
+    \textit{lesstinuous} functions are continuous because there exists a \(\delta > 0\) for every \(\epsilon > 0\). Continuous functions are \textit{lesstinuous} because if there exists a \(\delta > 0\) satisfying a \(\epsilon > 0\), then any smaller \(\delta\) also satisfies that \(\epsilon\).
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4.4.1}
+\begin{enumerate}[label=(\alph*)]
+    \item Show that $f(x) = x^3$ is continuous on all of $\mathbf{R}$.
+    \begin{proof}Given some $\epsilon > 0$, if $|x| < \sqrt[3]{\epsilon}$, then $|x^3| < \epsilon$. Thus $f$ is continuous at $0$. If $c \neq 0$ and $|x - c| < \min\{|c|, \frac{\epsilon}{7c^2}\}$, then $|x| < 2|c|$ so
+    \begin{align*}
+        |x^3 - c^3| < |x - c||x^2 + xc + c^2| < |x - c|(4c^2 + 2c^2 + c^2) = 7c^2|x - c| < \epsilon
+    \end{align*}
+    Thus $f$ is continuous at $c \neq 0$.
+    \end{proof}
+    \item Show that $f$ is not uniformly continuous on $\mathbf{R}$.
+    \begin{proof}Let $x_n = n$ and $y_n = n + \frac{1}{n}$. $\lim|x_n - y_n| = \lim|\frac{1}{n}| = 0$ but $|f(x) - f(y)| = 3n + \frac{3}{n} + \frac{1}{n^3} > 3$ so $f$ is not uniformly continuous.
+    \end{proof}
+    \item Show that $f$ is uniformly continuous on any bounded subset of $\mathbf{R}$.
+    \begin{proof}
+    Let $A \subset \mathbf{R}$ be bounded. Then there exists some $M > 0$ such that for all $x \in A$, $|x| \leq M$.
+    \begin{align*}
+        |x^3 - y^3| = |x - y||x^2 + xy + y^2| \leq |x - y|(x^2 + |xy| + y^2) \leq |x - y|3M^2.
+    \end{align*}
+    If we choose $\delta < \frac{\epsilon}{3M^2}$ and $|x - y| < \delta$, then $|x^3 - y^3| < \epsilon$. Thus, $f$ is uniformly continuous on $A$.
+    \end{proof}
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4.4.2}
+\begin{enumerate}[label=(\alph*)]
+    \item Is \(f(x) = \frac{1}{x}\) uniformly continuous on \((0, 1)\)?
+    \medskip \newline 
+    No. Let \(x_n = \frac{1}{n}\) and \(y_n = \frac{1}{n + 1}\). \(|x_n - y_n| = \frac{1}{n^2 + n}\) so \(\lim{|x_n - y_n|} = 0\) but \(|f(x_n) - f(y_n)| = 1\) so by the sequential criterion for the absence of uniform continuity, \(f\) is not uniformly continuous.
+    \item Is \(g(x) = \sqrt{x^2 + 1}\) uniformly continuous on \((0, 1)\)?
+    \medskip \newline 
+    Yes. \(g\) is continuous on \([0, 1]\) which is compact so \(g\) is uniformly continuous on \([0, 1]\). \((0, 1)\) is a subset of \([0, 1]\) so \(g\) is uniformly continuous on \((0, 1)\).
+    \item Is \(h(x) = x\sin(\frac{1}{x})\) uniformly continuous on \((0, 1)\)?
+    \medskip \newline
+    Yes. We can extend \(h\) over \([0, 1]\) by letting \(h(0) = 0\). \(h\) is continuous on compact set \([0, 1]\) so \(h\) is uniformly continuous on \([0, 1]\). \((0, 1)\) is a subset of \([0, 1]\) so \(h\) is uniformly continuous on \((0, 1)\).
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4.5.1} Show how the Intermediate Value Theorem follows as a corollary to the preservation of connected sets.
+\begin{proof} Let \(f: [a, b] \to \mathbf{R}\) be a continuous function and \(L\) be a point satisfying either \(f(a) < L < f(b)\) or \(f(a) > L > f(b)\). \([a, b]\) is connected and \(f\) is continuous so \(f([a, b])\) is connected. Theorem 3.4.7 implies that because \(L \in f([a, b])\), there exists some \(c \in [a, b]\) such that \(f(c) = L\).
+\end{proof}
+\end{exercise}
+
+\begin{exercise}{4.5.2} Provide an example of each of the following, or explain why the request is impossible.
+\begin{enumerate}[label=(\alph*)]
+    \item A continuous function defined on an open interval with range equal to a closed interval.
+    \medskip \newline
+    \(f(x) = \sin{x}\) over \((0, 2\pi)\). \(f\) is continuous and has range \([-1, 1]\).
+    
+    \item A continuous function defined on a closed interval with range equal to an open interval.
+    \medskip \newline
+    This is not possible. Closed intervals are compact and continuous functions preserve compactness.
+    
+    \item A continuous function defined on an open interval with range equal to an unbounded closed set different from \(\mathbf{R}\).
+    \medskip \newline
+    \(f(x) = \sec{x}\) over \((-\frac{\pi}{2}, \frac{\pi}{2})\). \(f\) is continuous on this interval and has range \([1, \infty)\).
+    
+    \item A continuous function defined on all of \(\mathbf{R}\) with range equal to \(\mathbf{Q}\).
+    \medskip \newline
+    This is not possible because it violates the Intermediate Value Theorem. Pick any two points \(x, y \in \mathbf{R}\) such that \(x < y\) and \(f(x) \neq f(y)\). The density of the irrationals in the reals implies there exists some \(l \notin \mathbf{Q}\) such that \(l \in (f(x), f(y))\) (or \(l \in (f(y), f(x))\)). The Intermediate Value Theorem implies the existence of some \(z \in (x, y)\) such that \(f(z) = l\). Thus \(f\)'s range is not \(\mathbf{Q}\).
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4.6.1} Construct a function \(f: \mathbf{R} \to \mathbf{R}\) so that
+\begin{enumerate}[label=(\alph*)]
+    \item $D_f = \mathbf{Z}^c$.
+    \[
+        f(x) =
+        \begin{cases}
+            x, & x \in \mathbf{Q} \\
+            \lfloor x + 0.5 \rfloor, & x \notin \mathbf{Q}
+        \end{cases}
+    \]
+    
+    \item \(D_f = \{x : 0 < x \leq 1 \}\).
+    \[
+        f(x) =
+        \begin{cases}
+            x, & x \leq 0 \text{ or } x > 1 \text{ or } x \in \mathbf{Q} \\
+            0, & 0 < x < 1 \text{ and } x \notin \mathbf{Q}
+        \end{cases}
+    \]
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4.6.2}
+\end{exercise}
+
+
+\begin{exercise}{5.3.2} Let $f$ be differentiable on an interval $A$. If $f'(x) \neq 0$ on $A$, show that $f$ is one-to-one on $A$. Provide an example to show that the converse statement need not be true.
+
+\begin{proof}Suppose $f$ is not one-to-one on interval $A$. Then there exist two points $x, y \in A$ with $f(x) = f(y)$. By the Mean Value Theorem, there exists some point $z \in (x,y)$ such that
+\[f'(z) = \frac{f(x) - f(y)}{x - y} = 0.\]
+\noindent Thus, if $f'(x) \neq 0$ for all $x \in A$, then $f$ is one-to-one.
+\end{proof}
+
+\noindent As an example that shows the converse is not necessarily true, consider $f(x) = x^2$ on $[0, \infty)$. $f$ is one-to-one and $f'(0) = 0$.
+\end{exercise}
+
+\begin{exercise}{5.3.3} Let $h$ be a differentiable function defined on the interval $[0, 3]$, and assume that $h(0) = 1$, $h(1) = 2$, and $h(3) = 2$.
+
+\begin{enumerate}[label=(\alph*)]
+    \item Argue that there exists a point $d \in [0, 3]$ where $h(d) = d$.
+    $\mathbf{TODO}$
+    
+\end{enumerate}
+\end{exercise}
+\end{document}
