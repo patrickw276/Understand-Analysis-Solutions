@@ -11,34 +11,55 @@
 
 \begin{document}
 
-\begin{exercise}{4.2.1} Let $f$ and $g$ be functions defined on some $A \subseteq \mathbf{R}$ with $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$ for some limit point $c$ of $A$. Then $\lim_{x \to c} [f(x) + g(x)] = L + M$.
+\begin{exercise}{4.2.1}
+    Let \(f\) and \(g\) be functions defined on some \(A \subseteq \mathbf{R}\) with \(\lim_{x \to c} f(x) = L\) and
+    \(\lim_{x \to c} g(x) = M\) for some limit point \(c\) of \(A\). Then \(\lim_{x \to c} [f(x) + g(x)] = L + M\).
 
-\begin{enumerate}[label=(\alph*)]
-    \item Proof using the Sequential Criterion for Functional Limits and the Algebraic Limit Theorem:
-    \begin{proof} By the Sequential Criterion for Functional Limits, we know that for any sequence $(x_n) \subseteq A$ with $\lim x_n = c$ and $x_n \neq c$ for all $n \in \mathbf{N}$, $\lim f(x_n) = L$ and $\lim g(x_n) = M$. Then the Algebraic Limit Theorem tells us that $\lim [f(x_n) + g(x_n)] = L + M$. Thus, the Sequential Criterion for Functional Limits implies $\lim_{x \to c}[f(x) + g(x)] = L + M$.
-    \end{proof}
+    \begin{enumerate}[label=(\alph*)]
+        \item Proof using the Sequential Criterion for Functional Limits and the Algebraic Limit Theorem:
+        \begin{proof}
+            By the Sequential Criterion for Functional Limits, we know that for any sequence \((x_n) \subseteq A\) with
+            \(\lim x_n = c\) and \(x_n \neq c\) for all \(n \in \mathbf{N}\), \(\lim f(x_n) = L\) and
+            \(\lim g(x_n) = M\). Then the Algebraic Limit Theorem tells us that \(\lim [f(x_n) + g(x_n)] = L + M\).
+            Thus, the Sequential Criterion for Functional Limits implies \(\lim_{x \to c}[f(x) + g(x)] = L + M\).
+        \end{proof}
 
-    \item Proof using the $\epsilon-\delta$ definition of functional limits:
-    \begin{proof} Let $\epsilon > 0$ be arbitrary. There exists a $\delta_0 > 0$ such that for any $x \in A$, if $0 < |x - c| < \delta_0$, then $|f(x) - L| < \epsilon/2$. Similarly, there exists a $\delta_1 > 0$ such that for any $x \in A$, if $0 < |x - c| < \delta_1$, then $|g(x) - M| < \epsilon/2$. If $\delta = \min\{\delta_0, \delta_1\}$ and $0 < |x - c| < \delta$, then $|(f(x) + g(x)) - (L + M)| \leq |f(x) - L| + |g(x) - M| < \epsilon$. Thus, $\lim_{x \to c}[f(x) + g(x)] = L + M$.
-    \end{proof}
-    
-    \item $\lim_{x \to c}[f(x)g(x)] = LM$.\vspace{\baselineskip}
+        \item Proof using the \(\epsilon-\delta\) definition of functional limits:
+        \begin{proof}
+            Let \(\epsilon > 0\) be arbitrary. There exists a \(\delta_0 > 0\) such that for any \(x \in A\), if
+            \(0 < |x - c| < \delta_0\), then \(|f(x) - L| < \epsilon/2\). Similarly, there exists a \(\delta_1 > 0\)
+            such that for any \(x \in A\), if \(0 < |x - c| < \delta_1\), then \(|g(x) - M| < \epsilon/2\). If
+            \(\delta = \min\{\delta_0, \delta_1\}\) and \(0 < |x - c| < \delta\), then
+            \(|(f(x) + g(x)) - (L + M)| \leq |f(x) - L| + |g(x) - M| < \epsilon\). Thus,
+            \(\lim_{x \to c}[f(x) + g(x)] = L + M\).
+        \end{proof}
 
-    Proof using the Sequential Criterion for Functional Limits and the Algebraic Limit Theorem:
-    \begin{proof} By the Sequential Criterion for Functional Limits, we know that for any sequence $(x_n) \subseteq A$ with $\lim x_n = c$ and $x_n \neq c$ for all $n \in \mathbf{N}$, $\lim f(x_n) = L$ and $\lim g(x_n) = M$. Then the Algebraic Limit Theorem tells us that $\lim [f(x_n)g(x_n)] = LM$. Thus, the Sequential Criterion for Functional Limits implies $\lim_{x \to c}[f(x)g(x)] = LM$.
-    \end{proof}
-    
-    Proof using the $\epsilon-\delta$ definition of functional limits:
-    \begin{proof} Let $\epsilon > 0$ be arbitrary. There exists a $\delta_0 > 0$ such that for any $x \in A$, if $0 < |x - c| < \delta_0$, then $|f(x) - L| < \min\{\frac{\epsilon}{2(|M| + 1)}, 1\}$. Similarly, there exists a $\delta_1 > 0$ such that for any $x \in A$, if $0 < |x - c| < \delta_1$, then $|g(x) - M| < \frac{\epsilon}{2(|L| + 1)}$. Then if $\delta = \min\{\delta_0, \delta_1\}$ and $0 < |x - c| < \delta$,
-    \begin{align*}
-        |f(x)g(x) - LM| &\leq |M||f(x) - L| + |f(x)||g(x) - M| \\
-                        &< |M||f(x) - L| + (|L| + 1)|g(x) - M| \\
-                        &< \epsilon.
-    \end{align*}
-    Thus, $\lim_{x \to c}[f(x)g(x)] = LM$.
-    \end{proof}
-    
-\end{enumerate}
+        \item $\lim_{x \to c}[f(x)g(x)] = LM$.
+        \vspace{\baselineskip}
+        Proof using the Sequential Criterion for Functional Limits and the Algebraic Limit Theorem:
+        \begin{proof}
+            By the Sequential Criterion for Functional Limits, we know that for any sequence \((x_n) \subseteq A\) with
+            \(\lim x_n = c\) and \(x_n \neq c\) for all \(n \in \mathbf{N}\), \(\lim f(x_n) = L\) and
+            \(\lim g(x_n) = M\). Then the Algebraic Limit Theorem tells us that \(\lim [f(x_n)g(x_n)] = LM\). Thus, the
+            Sequential Criterion for Functional Limits implies \(\lim_{x \to c}[f(x)g(x)] = LM\).
+        \end{proof}
+
+        Proof using the $\epsilon-\delta$ definition of functional limits:
+        \begin{proof}
+            Let \(\epsilon > 0\) be arbitrary. There exists a \(\delta_0 > 0\) such that for any \(x \in A\), if
+            \(0 < |x - c| < \delta_0\), then \(|f(x) - L| < \min\{\frac{\epsilon}{2(|M| + 1)}, 1\}\). Similarly, there
+            exists a \(\delta_1 > 0\) such that for any \(x \in A\), if \(0 < |x - c| < \delta_1\), then
+            \(|g(x) - M| < \frac{\epsilon}{2(|L| + 1)}\). Then if \(\delta = \min\{\delta_0, \delta_1\}\) and
+            \(0 < |x - c| < \delta\),
+            \begin{align*}
+                |f(x)g(x) - LM| &\leq |M||f(x) - L| + |f(x)||g(x) - M| \\
+                                &< |M||f(x) - L| + (|L| + 1)|g(x) - M| \\
+                                &< \epsilon.
+            \end{align*}
+            Thus, \(\lim_{x \to c}[f(x)g(x)] = LM\).
+        \end{proof}
+
+    \end{enumerate}
 \end{exercise}
 
 \begin{exercise}{4.2.2} For each stated limit, find the largest possible \(\delta\)-neighborhood
@@ -46,13 +67,13 @@ that is a proper response to the given \(\epsilon\) challenge.
 \begin{enumerate}[label=(\alph*)]
     \item \(\lim_{x \to 3} (5x - 6) = 9\), where \(\epsilon = 1\).
     \[\delta = \frac{1}{5}\]
-    
+
     \item \(\lim_{x \to 4}\sqrt{x} = 2\), where \(\epsilon = 1\).
     \[\delta = 3\]
-    
+
     \item \(\lim_{x \to \pi}\lfloor x \rfloor = 3\), where \(\epsilon = 1\).
     \[\delta = \pi - 3\]
-    
+
     \item \(\lim_{x \to \pi}\lfloor x \rfloor = 3\), where \(\epsilon = 0.01\).
     \[\delta = \pi - 3\]
 \end{enumerate}
@@ -76,15 +97,15 @@ that is a proper response to the given \(\epsilon\) challenge.
     \item \(f\) is \textit{onetinuous} at \(c\) if \(\forall \epsilon > 0, |x - c| < 1 \implies |f(x) - f(c)| < \epsilon\).
     \medskip \newline
     \(f(x) = k \text{ for some } k \in \mathbf{R} \text{ is \textit{onetinuous}.}\)
-    
+
     \item \(f\) is \textit{equaltinuous} at \(c\) if \(\forall \epsilon > 0, |x - c| < \epsilon \implies |f(x) - f(c)| < \epsilon\).
     \medskip \newline
     \(f(x) = mx + b \text{ where } m, b \in \mathbf{R} \text{ and } 0 < |m| \leq 1 \text{ is \textit{equaltinuous} and not \textit{onetinuous}.}\)
-    
+
     \item \(f\) is \textit{lesstinuous} at \(c\) if \(\forall \epsilon > 0, \exists \delta > 0, \delta < \epsilon, |x - c| < \delta \implies |f(x) - f(c)| < \epsilon\).
     \medskip \newline
     \(f(x) = mx + b \text{ where } m, b \in \mathbf{R} \text{ and } |m| < 1 \text{ is \textit{lesstinuous} and not \textit{equaltinuous}}.\)
-    
+
     \item Is every \textit{lesstinuous} function continuous? Is every continuous function \textit{lesstinuous}?
     \medskip \newline
     \textit{lesstinuous} functions are continuous because there exists a \(\delta > 0\) for every \(\epsilon > 0\). Continuous functions are \textit{lesstinuous} because if there exists a \(\delta > 0\) satisfying a \(\epsilon > 0\), then any smaller \(\delta\) also satisfies that \(\epsilon\).
@@ -117,10 +138,10 @@ that is a proper response to the given \(\epsilon\) challenge.
 \begin{exercise}{4.4.2}
 \begin{enumerate}[label=(\alph*)]
     \item Is \(f(x) = \frac{1}{x}\) uniformly continuous on \((0, 1)\)?
-    \medskip \newline 
+    \medskip \newline
     No. Let \(x_n = \frac{1}{n}\) and \(y_n = \frac{1}{n + 1}\). \(|x_n - y_n| = \frac{1}{n^2 + n}\) so \(\lim{|x_n - y_n|} = 0\) but \(|f(x_n) - f(y_n)| = 1\) so by the sequential criterion for the absence of uniform continuity, \(f\) is not uniformly continuous.
     \item Is \(g(x) = \sqrt{x^2 + 1}\) uniformly continuous on \((0, 1)\)?
-    \medskip \newline 
+    \medskip \newline
     Yes. \(g\) is continuous on \([0, 1]\) which is compact so \(g\) is uniformly continuous on \([0, 1]\). \((0, 1)\) is a subset of \([0, 1]\) so \(g\) is uniformly continuous on \((0, 1)\).
     \item Is \(h(x) = x\sin(\frac{1}{x})\) uniformly continuous on \((0, 1)\)?
     \medskip \newline
@@ -138,15 +159,15 @@ that is a proper response to the given \(\epsilon\) challenge.
     \item A continuous function defined on an open interval with range equal to a closed interval.
     \medskip \newline
     \(f(x) = \sin{x}\) over \((0, 2\pi)\). \(f\) is continuous and has range \([-1, 1]\).
-    
+
     \item A continuous function defined on a closed interval with range equal to an open interval.
     \medskip \newline
     This is not possible. Closed intervals are compact and continuous functions preserve compactness.
-    
+
     \item A continuous function defined on an open interval with range equal to an unbounded closed set different from \(\mathbf{R}\).
     \medskip \newline
     \(f(x) = \sec{x}\) over \((-\frac{\pi}{2}, \frac{\pi}{2})\). \(f\) is continuous on this interval and has range \([1, \infty)\).
-    
+
     \item A continuous function defined on all of \(\mathbf{R}\) with range equal to \(\mathbf{Q}\).
     \medskip \newline
     This is not possible because it violates the Intermediate Value Theorem. Pick any two points \(x, y \in \mathbf{R}\) such that \(x < y\) and \(f(x) \neq f(y)\). The density of the irrationals in the reals implies there exists some \(l \notin \mathbf{Q}\) such that \(l \in (f(x), f(y))\) (or \(l \in (f(y), f(x))\)). The Intermediate Value Theorem implies the existence of some \(z \in (x, y)\) such that \(f(z) = l\). Thus \(f\)'s range is not \(\mathbf{Q}\).
@@ -163,7 +184,7 @@ that is a proper response to the given \(\epsilon\) challenge.
             \lfloor x + 0.5 \rfloor, & x \notin \mathbf{Q}
         \end{cases}
     \]
-    
+
     \item \(D_f = \{x : 0 < x \leq 1 \}\).
     \[
         f(x) =
@@ -176,18 +197,18 @@ that is a proper response to the given \(\epsilon\) challenge.
 \end{exercise}
 
 \begin{exercise}{4.6.2}
-    Given a countable set \(A = \{a_1, a_2, a_3, ...\}\), define \(f(a_n) = \frac{1}{n}\) and \(f(x) = 0\) for all 
+    Given a countable set \(A = \{a_1, a_2, a_3, ...\}\), define \(f(a_n) = \frac{1}{n}\) and \(f(x) = 0\) for all
     \(x \in A\). Find \(D_f\).
 
     \medskip \noindent \(D_f = A\).
 
     \begin{proof}
-        For any \(a_n \in A\), let \(\epsilon = \frac{1}{n}\). Any \(V_\delta(a_n)\) is uncountable so there exists some 
-        \(x \in V_\delta(a_n)\), \(x \notin A\) which implies \(f(x) = 0 \notin V_\epsilon(f(a_n))\). Thus 
+        For any \(a_n \in A\), let \(\epsilon = \frac{1}{n}\). Any \(V_\delta(a_n)\) is uncountable so there exists some
+        \(x \in V_\delta(a_n)\), \(x \notin A\) which implies \(f(x) = 0 \notin V_\epsilon(f(a_n))\). Thus
         \(f\) is not continuous at any \(a_n \in A\).
 
         For \(c \notin A\), we'll consider the cases when \(c\) is and is not a limit point of \(A\) separately. If
-        \(c\) is not a limit point of \(A\), then there exists some \(V_\delta(c)\) such that 
+        \(c\) is not a limit point of \(A\), then there exists some \(V_\delta(c)\) such that
         \(V_\delta(c) \cap A = \emptyset\). The for any \(V_\epsilon(f(c))\), we can choose \(\delta \leq \delta_0\) and
         have
         \[x \in V_\delta(c) \implies x \notin A \implies f(x) = 0 \in V_\epsilon(f(c)).\]
@@ -195,7 +216,7 @@ that is a proper response to the given \(\epsilon\) challenge.
 
         If \(c\) is a limit point of \(A\), then given some \(V_\epsilon(f(c))\), choose \(N \in \mathbf{N}\) such that
         \(\frac{1}{N} < \epsilon\). Let \(\delta = \min\{ \lvert c - a_n \rvert \mid a_n \in A \text{ and } n < N \}\).
-        We know such a minimum exists because there are a finite number of terms \(a_n\) with \(n < N\). Then for any 
+        We know such a minimum exists because there are a finite number of terms \(a_n\) with \(n < N\). Then for any
         \(x \in V_\delta(c)\), we have \(f(x) < \frac{1}{N}\) so \(f(x) \in V_\epsilon(f(c))\).
     \end{proof}
 \end{exercise}
