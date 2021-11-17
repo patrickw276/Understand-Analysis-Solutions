@@ -79,37 +79,80 @@ that is a proper response to the given \(\epsilon\) challenge.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{4.3.1} Let $g(x) = \sqrt[3]{x}$.
-\begin{enumerate}[label=(\alph*)]
-    \item Prove that $g$ is continuous at $c = 0$.
-    \begin{proof}If $|x| < \epsilon^3$, then $|\sqrt[3]{x}| < \epsilon$.\end{proof}
-    \item Prove that $g$ is continuous at a point $c \neq 0$.
-    \begin{proof}Let $|x - c| < \min{c^{2/3}\epsilon, |c|}$. Then
-    \begin{align*}
-        |g(x) - g(c)| = |x^{1/3} - c^{1/3}| = \frac{|x - c|}{|x^{2/3} + x^{1/3}c^{1/3} + c^{2/3}|} < \frac{|x - c|}{c^{2/3}} < \epsilon.
-    \end{align*}
-    \end{proof}
-\end{enumerate}
+\begin{exercise}{4.2.3}
+    % TODO I've written out answers for (a) and (b) but haven't finished a proof for (c) yet.
 \end{exercise}
 
-\begin{exercise}{4.3.2} Let \(f\) be a function defined on all of \(\mathbf{R}\).
-\begin{enumerate}[label=(\alph*)]
-    \item \(f\) is \textit{onetinuous} at \(c\) if \(\forall \epsilon > 0, |x - c| < 1 \implies |f(x) - f(c)| < \epsilon\).
-    \medskip \newline
-    \(f(x) = k \text{ for some } k \in \mathbf{R} \text{ is \textit{onetinuous}.}\)
+\begin{exercise}{4.3.1}
+    Let \(g(x) = \sqrt[3]{x}\).
+    \begin{enumerate}[label=(\alph*)]
+        \item Prove that \(g\) is continuous at \(c = 0\).
+        \begin{proof}
+            If \(|x| < \epsilon^3\), then \(|\sqrt[3]{x}| < \epsilon\).
+        \end{proof}
+    
+        \item Prove that \(g\) is continuous at a point \(c \neq 0\).
+        \begin{proof}
+            Let \(|x - c| < \min{c^{2/3}\epsilon, |c|}\). Then
+            \begin{align*}
+                |g(x) - g(c)| = |x^{1/3} - c^{1/3}| = \frac{|x - c|}{|x^{2/3} + x^{1/3}c^{1/3} + c^{2/3}|} < 
+                \frac{|x - c|}{c^{2/3}} < \epsilon.
+            \end{align*}
+        \end{proof}
+    \end{enumerate}
+\end{exercise}
 
-    \item \(f\) is \textit{equaltinuous} at \(c\) if \(\forall \epsilon > 0, |x - c| < \epsilon \implies |f(x) - f(c)| < \epsilon\).
-    \medskip \newline
-    \(f(x) = mx + b \text{ where } m, b \in \mathbf{R} \text{ and } 0 < |m| \leq 1 \text{ is \textit{equaltinuous} and not \textit{onetinuous}.}\)
+\begin{exercise}{4.3.2}
+    Let \(f\) be a function defined on all of \(\mathbf{R}\).
+    \begin{enumerate}[label=(\alph*)]
+        \item \(f\) is \textit{onetinuous} at \(c\) if 
+        \(\forall \epsilon > 0, |x - c| < 1 \implies |f(x) - f(c)| < \epsilon\).
+        \medskip \newline
+        \(f(x) = k \text{ for some } k \in \mathbf{R} \text{ is \textit{onetinuous}.}\)
 
-    \item \(f\) is \textit{lesstinuous} at \(c\) if \(\forall \epsilon > 0, \exists \delta > 0, \delta < \epsilon, |x - c| < \delta \implies |f(x) - f(c)| < \epsilon\).
-    \medskip \newline
-    \(f(x) = mx + b \text{ where } m, b \in \mathbf{R} \text{ and } |m| < 1 \text{ is \textit{lesstinuous} and not \textit{equaltinuous}}.\)
+        \item \(f\) is \textit{equaltinuous} at \(c\) if 
+        \(\forall \epsilon > 0, |x - c| < \epsilon \implies |f(x) - f(c)| < \epsilon\).
+        \medskip \newline
+        \(f(x) = mx + b \text{ where } m, b \in \mathbf{R} \text{ and } 0 < |m| \leq 1 \text{ is \textit{equaltinuous} 
+        and not \textit{onetinuous}.}\)
 
-    \item Is every \textit{lesstinuous} function continuous? Is every continuous function \textit{lesstinuous}?
-    \medskip \newline
-    \textit{lesstinuous} functions are continuous because there exists a \(\delta > 0\) for every \(\epsilon > 0\). Continuous functions are \textit{lesstinuous} because if there exists a \(\delta > 0\) satisfying a \(\epsilon > 0\), then any smaller \(\delta\) also satisfies that \(\epsilon\).
-\end{enumerate}
+        \item \(f\) is \textit{lesstinuous} at \(c\) if \(\forall \epsilon > 0, \exists \delta > 0, \delta < \epsilon, 
+        |x - c| < \delta \implies |f(x) - f(c)| < \epsilon\).
+        \medskip \newline
+        \(f(x) = mx + b \text{ where } m, b \in \mathbf{R} \text{ and } |m| < 1 \text{ is \textit{lesstinuous} and not 
+        \textit{equaltinuous}}.\)
+
+        \item Is every \textit{lesstinuous} function continuous? Is every continuous function \textit{lesstinuous}?
+        \medskip \newline
+        \textit{lesstinuous} functions are continuous because there exists a \(\delta > 0\) for every \(\epsilon > 0\). 
+        Continuous functions are \textit{lesstinuous} because if there exists a \(\delta > 0\) satisfying a \(\epsilon > 
+        0\), then any smaller \(\delta\) also satisfies that \(\epsilon\).
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4.3.3}
+    Let \(f: A \to \mathbf{R}\) and \(g: B \to \mathbf{R}\) with \(f(A) \subseteq B\) so that \(g \circ f\) is defined
+    on \(A\). If \(f\) is continuous at \(c \in A\) and \(g\) is continuous at \(f(c) \in B\), then  \(g \circ f\) is
+    continuous at \(c\).
+    \begin{enumerate}[label=(\alph*)]
+        \item Prove this using the \(\epsilon\)-\(\delta\) characterization of continuity.
+        \begin{proof}
+            Let \(\epsilon > 0\) be arbitrary. \(g\) is continous at \(f(c)\) so there exists some \(\delta' > 0\) such
+            that for all \(y \in B\), if \(\lvert y - f(c) \rvert < \delta'\), then 
+            \(\lvert g(y) - g(f(c)) \rvert < \epsilon\). \(f\) is continuous at \(c\) so there exists some 
+            \(\delta > 0\) such that for all \(x \in A\), if \(\lvert x - c \rvert < \delta\), then 
+            \(\lvert f(x) - f(c) \rvert < \delta' \). This implies that if \(\lvert x - c \rvert < \delta\), then 
+            \(\lvert g(f(x)) - g(f(c)) \rvert < \epsilon\). Thus \(g \circ f\) is continuous at \(c\).
+        \end{proof}
+
+        \item Prove this using the sequential characterization of continuity.
+        \begin{proof}
+            \(g\) is continuous at \(f(c)\) so for any sequence \((y_n) \subseteq B\) with \((y_n) \to f(c)\), we have
+            \(g(y_n) \to g(f(c))\). Similarly, \(f\)'s continuity at \(c\) implies that for any sequence 
+            \((x_n) \subseteq A\) with \((x_n) \to c\), we know \(f(x_n) \to f(c)\). \(f(x_n) \subseteq B\) so \(g\)'s
+            continuity implies \(g(f(x_n)) \to g(f(c))\). Thus \(g \circ f\) is continuous at \(c\).
+        \end{proof}
+    \end{enumerate}
 \end{exercise}
 
 \begin{exercise}{4.4.1}
@@ -136,17 +179,47 @@ that is a proper response to the given \(\epsilon\) challenge.
 \end{exercise}
 
 \begin{exercise}{4.4.2}
-\begin{enumerate}[label=(\alph*)]
-    \item Is \(f(x) = \frac{1}{x}\) uniformly continuous on \((0, 1)\)?
-    \medskip \newline
-    No. Let \(x_n = \frac{1}{n}\) and \(y_n = \frac{1}{n + 1}\). \(|x_n - y_n| = \frac{1}{n^2 + n}\) so \(\lim{|x_n - y_n|} = 0\) but \(|f(x_n) - f(y_n)| = 1\) so by the sequential criterion for the absence of uniform continuity, \(f\) is not uniformly continuous.
-    \item Is \(g(x) = \sqrt{x^2 + 1}\) uniformly continuous on \((0, 1)\)?
-    \medskip \newline
-    Yes. \(g\) is continuous on \([0, 1]\) which is compact so \(g\) is uniformly continuous on \([0, 1]\). \((0, 1)\) is a subset of \([0, 1]\) so \(g\) is uniformly continuous on \((0, 1)\).
-    \item Is \(h(x) = x\sin(\frac{1}{x})\) uniformly continuous on \((0, 1)\)?
-    \medskip \newline
-    Yes. We can extend \(h\) over \([0, 1]\) by letting \(h(0) = 0\). \(h\) is continuous on compact set \([0, 1]\) so \(h\) is uniformly continuous on \([0, 1]\). \((0, 1)\) is a subset of \([0, 1]\) so \(h\) is uniformly continuous on \((0, 1)\).
-\end{enumerate}
+    \begin{enumerate}[label=(\alph*)]
+        \item Is \(f(x) = \frac{1}{x}\) uniformly continuous on \((0, 1)\)?
+        \medskip \newline
+        No. Let \(x_n = \frac{1}{n}\) and \(y_n = \frac{1}{n + 1}\). \(|x_n - y_n| = \frac{1}{n^2 + n}\) so 
+        \(\lim{|x_n - y_n|} = 0\) but \(|f(x_n) - f(y_n)| = 1\) so by the sequential criterion for the absence of 
+        uniform continuity, \(f\) is not uniformly continuous.
+
+        \item Is \(g(x) = \sqrt{x^2 + 1}\) uniformly continuous on \((0, 1)\)?
+        \medskip \newline
+        Yes. \(g\) is continuous on \([0, 1]\) which is compact so \(g\) is uniformly continuous on \([0, 1]\). 
+        \((0, 1)\) is a subset of \([0, 1]\) so \(g\) is uniformly continuous on \((0, 1)\).
+
+        \item Is \(h(x) = x\sin(\frac{1}{x})\) uniformly continuous on \((0, 1)\)?
+        \medskip \newline
+        Yes. We can extend \(h\) over \([0, 1]\) by letting \(h(0) = 0\). \(h\) is continuous on compact set \([0, 1]\) 
+        so \(h\) is uniformly continuous on \([0, 1]\). \((0, 1)\) is a subset of \([0, 1]\) so \(h\) is uniformly 
+        continuous on \((0, 1)\).
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4.4.3}
+    Show that \(f(x) = \frac{1}{x^2}\) is uniformly continuous on the set \([1, \infty)\) but not on the set 
+    \((0, \infty)\).
+    
+    \medskip
+    First, we'll show that \(f\) is uniformly continuous on \([1, \infty)\).
+    \[\lvert \frac{1}{x^2} - \frac{1}{y^2} \rvert = \lvert \frac{y^2 - x^2}{x^2y^2} \rvert = 
+    \frac{(x + y)\lvert x - y \rvert}{x^2y^2} = (\frac{1}{xy^2} + \frac{1}{x^2y}) \lvert x - y \rvert\]
+    With \(x, y \in [1, \infty)\), we have \(x, y > 1\) so
+    \[\lvert \frac{1}{x^2} - \frac{1}{y^2} \rvert \leq 2\lvert x - y \rvert .\]
+    If \(\delta = \frac{\epsilon}{2}\) and \(\lvert x - y \rvert < \delta\), 
+    \(\lvert \frac{1}{x^2} - \frac{1}{y^2} \rvert < \epsilon\). Given any \(\epsilon\), the associated \(\delta\) only
+    relies on \(\epsilon\) and not the specific values of \(x\) or \(y\). Thus, \(f\) is uniformly continuous on
+    \([1, \infty)\).
+
+    \medskip
+    Next, we'll show that \(f\) is not uniformly continuous on \((0, 1]\). Let \(x_n = \frac{1}{n}\) and 
+    \(y_n = \frac{1}{n + 1}\). \(\lvert x_n - y_n \rvert = \lvert \frac{1}{n(n + 1)} \rvert\) so 
+    \(\lim \lvert x_n - y_n \rvert = 0\) but \(\lvert f(x_n) - f(y_n) \rvert = \lvert 2n + 1 \rvert \geq 2\) for all
+    \(n \in \mathbf{N}\). By the sequential criterion for the absence of uniform continuity, \(f\) is not uniformly
+    continuous on \((0, 1]\).
 \end{exercise}
 
 \begin{exercise}{4.5.1} Show how the Intermediate Value Theorem follows as a corollary to the preservation of connected sets.
